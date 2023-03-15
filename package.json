@@ -1,0 +1,30 @@
+{
+  "name": "linear-color",
+  "version": "1.0.0",
+  "description": "Linear colorspace blending; extracted from framer-motion",
+  "license": "MIT",
+  "author": "Framer",
+  "main": "dist/mix-color.js",
+  "module": "dist/mix-color.mjs",
+  "types": "dist/mix-color.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "color",
+    "mix",
+    "parse",
+    "hex",
+    "rgb",
+    "hsl"
+  ],
+  "scripts": {
+    "build": "tsup src/mix-color.ts --format cjs,esm --dts"
+  },
+  "prettier": "@alloc/prettier-config",
+  "devDependencies": {
+    "@alloc/prettier-config": "^1.0.0",
+    "prettier": "^2.8.4",
+    "tsup": "^6.6.3"
+  }
+}
