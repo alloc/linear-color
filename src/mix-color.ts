@@ -18,6 +18,12 @@ const colorTypes = [hex, rgba, hsla]
 const getColorType = (v: Color | string) =>
   colorTypes.find(type => type.test(v))
 
+const rgbaToString = {
+  value: function () {
+    return rgba.transform(this)
+  },
+}
+
 export function parseColor(color: Color | string) {
   const type = getColorType(color)
 
@@ -33,14 +39,11 @@ export function parseColor(color: Color | string) {
     model = hslaToRgba(model as HSLA)
   }
 
+  Object.defineProperty(model, 'toString', rgbaToString)
   return model as RGBA
 }
 
-export const mixColor = (
-  from: Color | string,
-  to: Color | string,
-  v: number
-) => {
+export function mixColor(from: Color | string, to: Color | string, v: number) {
   from = parseColor(from)
   to = parseColor(to)
   return rgba.transform({
