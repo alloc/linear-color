@@ -51,6 +51,6 @@ export const mixColor = (
   })
 }
 
-export { isColorString } from './types/color/utils'
+export { singleColorRegex } from './types/utils'
 
 export type { Color, HSLA, RGBA }
